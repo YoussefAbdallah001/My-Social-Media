@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(255, 205, 144);
+            color: black;
+        }
+        #click {
+            position: fixed;
+            display: none;
+            right: 10px;
+            bottom: 10px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: white;
+            border: solid 1px white;
+            cursor: pointer;
+            font-size: xx-large;
+            text-align: center;
+        }
+        .text-top {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .text-top img {
+            border-radius: 50%;
+            width: 120px;
+            transition: 1s;
+            animation: animation3 0.7s;
+        }
+        .btn-social {
+            width: 80%;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: transparent;
+            height: 60px;
+            font-size: x-large;
+            margin-bottom: 20px;
+            transition: 1s;
+        }
+        .btn-social:hover {
+            transform: scale(1.1);
+        }
+        .row {
+            text-align: center;
+        }
+        img:hover {
+            transform: scale(1.111);
+        }
+        #q01 {
+            animation: animation1 1s;
+        }
+        #q1 {
+            animation: animation2 1s;
+        }
+        footer {
+            color: white;
+            padding: 40px;
+            margin-top: 25px;
+            text-align: center;
+            animation: animation4 1s;
+        }
+        .text-top h2, .text-top h4 {
+            animation: animation5 1s;
+        }
+        @keyframes animation1 {
+            from { transform: translateX(400px); }
+            to { transform: translateX(0); }
+        }
+        @keyframes animation2 {
+            from { transform: translateX(-400px); }
+            to { transform: translateX(0); }
+        }
+        @keyframes animation3 {
+            from { transform: translateY(700px); }
+            to { transform: translateY(0); }
+        }
+        @keyframes animation4 {
+            from { transform: translateY(200px); }
+            to { transform: translateY(0); }
+        }
+        @keyframes animation5 {
+            from { transform: translateY(-160px); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-top">
+        <h4>Welcome to</h4>
+        <h2>Youssef Owais</h2>
+        <img src="imges/WhatsApp Image 2025-01-10 at 4.30.39 PM.jpeg" alt="img for Youssef Owais">
+    </div>
+    <div class="row">
+        <div id="q1" class="col-md-6 col-12">
+            <a href="https://wa.me/201097325420" target="_blank">
+                <button class="btn-social">
+                    <i class="fab fa-whatsapp"></i> What's App
+                </button>
+            </a>
+        </div>
+        <div id="q01" class="col-md-6 col-12">
+            <a href="https://www.facebook.com/share/1Vpk6YMYLz/?mibextid=wwXIfr" target="_blank">
+                <button class="btn-social">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div id="q1" class="col-md-6 col-12">
+            <a href="https://www.tiktok.com/@youssef.abdallah.01?_t=ZS-8ubF0zaUWgv&_r=1" target="_blank">
+                <button class="btn-social">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </button>
+            </a>
+        </div>
+        <div id="q01" class="col-md-6 col-12">
+            <a href="https://www.instagram.com/youssef_2wais/profilecard/?igsh=b3FncmZuOWxmeDll" target="_blank">
+                <button class="btn-social">
+                    <i class="fab fa-instagram"></i> Instagram
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div id="q1" class="col-md-6 col-12">
+            <a href="https://snapchat.com/t/aeTV3MpK" target="_blank">
+                <button class="btn-social">
+                    <i class="fab fa-snapchat"></i> Snapchat
+                </button>
+            </a>
+        </div>
+        <div id="q01" class="col-md-6 col-12">
+            <a href="phon.html" target="_blank">
+                <button class="btn-social">
+                    <i class="fa-solid fa-phone"></i> Phone Number
+                </button>
+            </a>
+        </div>
+    </div>
+    <button id="click">&#11165;</button>
+    <footer class="bg-dark">
+        <div class="container text-center">
+            <p class="mb-1">© 2024 SafeHaven Security. All Rights Reserved.</p>
+            <p>
+                <a href="#" class="text-decoration-none text-white me-2">Privacy Policy</a> |
+                <a href="#" class="text-decoration-none text-white ms-2">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        const btn = document.getElementById("click");
+        window.onscroll = () => {
+            btn.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
+        };
+        btn.addEventListener("click", () => {
+            window.scroll({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

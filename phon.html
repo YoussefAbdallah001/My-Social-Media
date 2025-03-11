@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(255, 205, 144);
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            border: 2px solid black;
+            text-align: center;
+            background-color: transparent;
+            width: 90%;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #back {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .back {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back i {
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .back:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        .b1 {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .b2 {
+            width: 60%;
+            color: black;
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: auto;
+        }
+
+        .b2:hover {
+            transform: scale(1.05);
+        }
+
+        #copy-message {
+            font-size: 14px;
+            color: green;
+            margin-top: 1px;
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="back">
+            <a href="index.html">
+                <button class="back">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+            </a>
+        </div>
+        <h3>My Number</h3>
+        <h5 class="b1" id="phone-number">01097325420</h5>
+        
+        <div style="display: flex; justify-content: center;">
+            <button class="b2" onclick="copyNumber()">Copy My Number</button>
+        </div>
+
+        <p id="copy-message"></p>
+    </div> 
+
+    <script>
+        function copyNumber() {
+            let number = document.getElementById("phone-number").innerText;
+            navigator.clipboard.writeText(number).then(() => {
+                let message = document.getElementById("copy-message");
+                message.innerText = "The Number is Copied";
+                setTimeout(() => { message.innerText = ""; }, 1500);
+            });
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
