@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/724/724664.png" type="image/png">
+    <style>
+        body {
+            height: 50vh;
+            background: var(--bg-light);
+            color: var(--text-light);
+            font-family: 'Segoe UI', sans-serif;
+            transition: 0.3s;
+            overflow-x: hidden;
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+
+        .container {
+            margin-top: 13%;
+        }
+
+        .card {
+            background: var(--card-bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 80px auto;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+
+        .back {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: black;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            outline: none;
+        }
+
+        .back:focus {
+            outline: none;
+        }
+
+        @keyframes back {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ii {
+            width: 30px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .back:hover .ii {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .back samp {
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            color: black;
+            font-size: 16px;
+        }
+
+        .back:hover samp {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+
+        h3 {
+            margin-top: 1px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h5 {
+            color: #fff;
+            background-color: black;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .btn-copy {
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 0px;
+            margin: auto;
+            transition: 0.4s;
+        }
+
+        .btn-copy:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+
+        #copy-message {
+            text-align: center;
+            font-size: 14px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="mb-3">
+                <a href="index.html">
+                    <button class="back">
+                        <i class="fa-solid fa-arrow-left ii"></i>
+                        <samp>Back</samp>
+                    </button>
+                </a>
+            </div>
+
+            <h3>My Number</h3>
+            <h5 id="phone-number">01097325420</h5>
+
+            <button class="btn-copy" onclick="copyNumber()">Copy My Number</button>
+            <p id="copy-message"></p>
+        </div>
+    </div>
+
+    <script>
+        function copyNumber() {
+            let number = document.getElementById("phone-number").innerText;
+            navigator.clipboard.writeText(number).then(() => {
+                let message = document.getElementById("copy-message");
+                message.innerText = "The Number is Copied!";
+                setTimeout(() => { message.innerText = ""; }, 1500);
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Youssef Owais | Social Media</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" type="image/png">
+    <style>
+        body {
+            background: var(--bg-light);
+            color: var(--text-light);
+            font-family: 'Segoe UI', sans-serif;
+            transition: 0.3s;
+            overflow-x: hidden;
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+
+        .profile {
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeDown 1.5s ease-in-out;
+        }
+
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile img {
+            width: 130px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile h2 {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .social-card {
+            background: var(--card-bg-light);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease-in-out, background 0.3s;
+            height: 100%;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-card:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.03);
+        }
+
+        .btn-social {
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 18px;
+            width: 100%;
+            transition: 0.3s;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: #000;
+        }
+
+
+        .footer {
+            text-align: center;
+            color: white;
+            background-color: #212529;
+            padding: 30px 15px;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        @media (max-width: 576px) {
+            .btn-social {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .profile img {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="imges/IMG_4935.jpeg" alt="Youssef Owais">
+            <h2>Youssef Owais</h2>
+            <p class=" text-muted">My Social Media Links</p>
+        </div>
+
+        <div class="row gy-4 mt-4 row-cols-1 row-cols-sm-2">
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="https://wa.me/201097325420" target="_blank">
+                        <button class="btn-social"><i class="fab fa-whatsapp me-2 text-success"></i> WhatsApp</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="https://www.facebook.com/share/1Vpk6YMYLz/?mibextid=wwXIfr" target="_blank">
+                        <button class="btn-social"><i class="fab fa-facebook me-2 text-primary"></i> Facebook</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="https://www.tiktok.com/@youssef.abdallah.01?_t=ZS-8ubF0zaUWgv&_r=1" target="_blank">
+                        <button class="btn-social"><i class="fab fa-tiktok me-2"></i> TikTok</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="https://www.instagram.com/youssef_2wais/profilecard/?igsh=b3FncmZuOWxmeDll"
+                        target="_blank">
+                        <button class="btn-social"><i class="fab fa-instagram me-2 text-danger"></i> Instagram</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="https://snapchat.com/t/aeTV3MpK" target="_blank">
+                        <button class="btn-social"><i class="fab fa-snapchat me-2 text-warning"></i> Snapchat</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="social-card h-100">
+                    <a href="contact.html" target="_blank">
+                        <button class="btn-social"><i class="fas fa-phone me-2"></i> Phone Number</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="mb-1">© 2025 Youssef Owais. All Rights Reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
