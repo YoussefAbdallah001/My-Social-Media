@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Youssef Owais - Social media links and contact information.">
+    <meta name="theme-color" content="#111827">
+    <title>Youssef Owais | Social Media</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" type="image/png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --card: rgba(255, 255, 255, 0.92);
+            --text: #111827;
+            --muted: #64748b;
+            --white: #fff;
+            --border: rgba(255, 255, 255, 0.16);
+            --shadow: 0 18px 45px rgba(0, 0, 0, 0.20);
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.28), transparent 28%),
+                radial-gradient(circle at 85% 25%, rgba(168, 85, 247, 0.25), transparent 30%),
+                linear-gradient(135deg, var(--bg), var(--bg-secondary));
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.20;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            width: min(100% - 32px, 900px);
+            margin: 0 auto;
+            padding: 52px 0 42px;
+            flex: 1;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 38px;
+            animation: fadeDown 0.8s ease both;
+        }
+
+        .profile img {
+            width: 132px;
+            height: 132px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.30);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.06) rotate(1deg);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+        }
+
+        .profile h1 {
+            margin: 18px 0 7px;
+            font-size: clamp(1.7rem, 4vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .profile p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 1rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .social-card {
+            animation: fadeUp 0.65s ease both;
+            animation-delay: calc(var(--i) * 70ms);
+        }
+
+        .social-link {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            color: var(--text);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .social-link i {
+            width: 28px;
+            text-align: center;
+            font-size: 1.45rem;
+        }
+
+        .social-link:hover {
+            color: var(--text);
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+        }
+
+        .social-link:active {
+            transform: translateY(-2px) scale(0.99);
+        }
+
+        .social-link:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.85);
+            outline-offset: 4px;
+        }
+
+        .whatsapp { color: #16a34a; }
+        .facebook { color: #1877f2; }
+        .tiktok { color: #111827; }
+        .instagram { color: #e11d48; }
+        .snapchat { color: #eab308; }
+        .phone { color: #2563eb; }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 28px 16px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.70);
+            background: rgba(2, 6, 23, 0.55);
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(12px);
+        }
+
+        footer p { margin: 0 0 8px; }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: min(100% - 24px, 500px);
+                padding-top: 34px;
+            }
+
+            .profile img {
+                width: 110px;
+                height: 110px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .social-link {
+                min-height: 68px;
+                border-radius: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="profile">
+            <img src="imges/IMG_4935.jpeg" alt="Profile photo of Youssef Owais" loading="eager">
+            <h1>Youssef Owais</h1>
+            <p>My Social Media Links</p>
+        </header>
+
+        <section class="social-grid" aria-label="Social media links">
+            <div class="social-card" style="--i: 0;">
+                <a class="social-link" href="https://wa.me/201097325420" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp">
+                    <i class="fab fa-whatsapp whatsapp" aria-hidden="true"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i: 1;">
+                <a class="social-link" href="https://www.facebook.com/share/1Vpk6YMYLz/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Open Facebook">
+                    <i class="fab fa-facebook facebook" aria-hidden="true"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i: 2;">
+                <a class="social-link" href="https://www.tiktok.com/@youssef.abdallah.01?_t=ZS-8ubF0zaUWgv&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
+                    <i class="fab fa-tiktok tiktok" aria-hidden="true"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i: 3;">
+                <a class="social-link" href="https://www.instagram.com/youssef_2wais/profilecard/?igsh=b3FncmZuOWxmeDll" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram">
+                    <i class="fab fa-instagram instagram" aria-hidden="true"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i: 4;">
+                <a class="social-link" href="https://snapchat.com/t/aeTV3MpK" target="_blank" rel="noopener noreferrer" aria-label="Open Snapchat">
+                    <i class="fab fa-snapchat snapchat" aria-hidden="true"></i>
+                    <span>Snapchat</span>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i: 5;">
+                <a class="social-link" href="contact.html" aria-label="Open phone number">
+                    <i class="fas fa-phone phone" aria-hidden="true"></i>
+                    <span>Phone Number</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Youssef Owais. All Rights Reserved.</p>
+        <div>
+            <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#" aria-label="Terms of Service">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
