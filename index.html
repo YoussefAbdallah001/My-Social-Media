@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Youssef Owais — Official social media links and contact information.">
+    <meta name="theme-color" content="#070b16">
+    <meta name="color-scheme" content="dark">
+    <title>Youssef Owais | Social Hub</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" type="image/png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #070b16;
+            --bg-2: #0d1324;
+            --card: rgba(255,255,255,.075);
+            --card-hover: rgba(255,255,255,.13);
+            --text: #f8fafc;
+            --muted: #a7b1c5;
+            --line: rgba(255,255,255,.12);
+            --glow: rgba(96,165,250,.32);
+            --radius: 24px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text);
+            font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at 12% 12%, rgba(37,99,235,.28), transparent 25%),
+                radial-gradient(circle at 88% 18%, rgba(168,85,247,.25), transparent 28%),
+                radial-gradient(circle at 50% 100%, rgba(6,182,212,.14), transparent 32%),
+                linear-gradient(135deg, var(--bg), var(--bg-2));
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 55px 55px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: -20%;
+            z-index: -3;
+            pointer-events: none;
+            background:
+                radial-gradient(circle, rgba(59,130,246,.12) 0 2px, transparent 3px);
+            background-size: 95px 95px;
+            animation: stars 30s linear infinite;
+            opacity: .55;
+        }
+
+        .orb {
+            position: fixed;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: .18;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .orb.one { background: #2563eb; top: 8%; left: -90px; animation: floatOne 10s ease-in-out infinite; }
+        .orb.two { background: #a855f7; right: -90px; top: 38%; animation: floatTwo 13s ease-in-out infinite; }
+        .orb.three { background: #06b6d4; bottom: -100px; left: 35%; animation: floatThree 11s ease-in-out infinite; }
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            background: #050811;
+            transition: opacity .7s ease, visibility .7s ease;
+        }
+        .loader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .loader-core {
+            width: 74px;
+            height: 74px;
+            border: 2px solid rgba(255,255,255,.12);
+            border-top-color: #60a5fa;
+            border-right-color: #a78bfa;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 45px rgba(96,165,250,.35);
+        }
+
+        main {
+            width: min(100% - 32px, 920px);
+            margin: auto;
+            padding: 58px 0 42px;
+            position: relative;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+            animation: reveal .8s .15s both;
+        }
+
+        .icon-btn {
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            color: #fff;
+            background: rgba(255,255,255,.06);
+            backdrop-filter: blur(16px);
+            cursor: pointer;
+            transition: .25s ease;
+        }
+        .icon-btn:hover {
+            transform: translateY(-3px) rotate(4deg);
+            background: rgba(255,255,255,.12);
+            box-shadow: 0 12px 30px rgba(0,0,0,.25);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 42px;
+            animation: revealDown 1s .2s both;
+        }
+
+        .avatar-wrap {
+            width: 158px;
+            height: 158px;
+            margin: auto;
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .avatar-wrap::before,
+        .avatar-wrap::after {
+            content: "";
+            position: absolute;
+            inset: -7px;
+            border-radius: 50%;
+            border: 1px solid rgba(96,165,250,.5);
+            animation: ring 4s linear infinite;
+        }
+        .avatar-wrap::after {
+            inset: -15px;
+            border-color: rgba(167,139,250,.18);
+            animation-duration: 6s;
+            animation-direction: reverse;
+        }
+
+        .avatar {
+            width: 138px;
+            height: 138px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,.92);
+            box-shadow:
+                0 0 0 8px rgba(255,255,255,.035),
+                0 20px 55px rgba(0,0,0,.4),
+                0 0 45px rgba(59,130,246,.25);
+            transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+        }
+        .avatar:hover {
+            transform: scale(1.055) rotate(2deg);
+            box-shadow:
+                0 0 0 10px rgba(255,255,255,.04),
+                0 25px 70px rgba(0,0,0,.48),
+                0 0 65px rgba(96,165,250,.42);
+        }
+
+        .status {
+            position: absolute;
+            right: 2px;
+            bottom: 13px;
+            width: 25px;
+            height: 25px;
+            border: 4px solid #080d19;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 0 5px rgba(34,197,94,.12), 0 0 22px rgba(34,197,94,.7);
+            animation: pulse 2s infinite;
+        }
+
+        .profile h1 {
+            margin: 25px 0 8px;
+            font-size: clamp(2rem, 6vw, 3.25rem);
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            background: linear-gradient(90deg, #fff, #bfdbfe 45%, #ddd6fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .profile p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 8px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: #dbeafe;
+            background: rgba(59,130,246,.09);
+            backdrop-filter: blur(12px);
+            font-size: .84rem;
+        }
+        .badge i { font-size: .45rem; color: #4ade80; }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+            perspective: 1200px;
+        }
+
+        .social-card {
+            opacity: 0;
+            animation: cardIn .75s cubic-bezier(.2,.8,.2,1) forwards;
+            animation-delay: calc(.12s + var(--i) * .08s);
+        }
+
+        .social-link {
+            min-height: 84px;
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 17px 20px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(255,255,255,.095), rgba(255,255,255,.035));
+            box-shadow: 0 18px 45px rgba(0,0,0,.18);
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition:
+                transform .35s cubic-bezier(.2,.8,.2,1),
+                border-color .35s ease,
+                box-shadow .35s ease,
+                background .35s ease;
+        }
+
+        .social-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.19), transparent 30%);
+            opacity: 0;
+            transition: opacity .35s ease;
+        }
+
+        .social-link::after {
+            content: "";
+            position: absolute;
+            top: -130%;
+            left: -35%;
+            width: 40%;
+            height: 360%;
+            transform: rotate(28deg);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
+            transition: left .75s ease;
+            pointer-events: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-7px) rotateX(2deg) rotateY(-2deg);
+            background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.055));
+            border-color: rgba(255,255,255,.26);
+            box-shadow: 0 25px 60px rgba(0,0,0,.32), 0 0 35px var(--glow);
+        }
+        .social-link:hover::before { opacity: 1; }
+        .social-link:hover::after { left: 120%; }
+
+        .social-link:active {
+            transform: translateY(-2px) scale(.985);
+        }
+
+        .social-link:focus-visible {
+            outline: 3px solid rgba(147,197,253,.9);
+            outline-offset: 4px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            flex: 0 0 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            color: #fff;
+            background: rgba(255,255,255,.09);
+            border: 1px solid rgba(255,255,255,.11);
+            font-size: 1.35rem;
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .social-link:hover .social-icon {
+            transform: translateZ(18px) scale(1.08) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,.22);
+        }
+
+        .social-content { min-width: 0; flex: 1; }
+        .social-content strong { display: block; font-size: 1.02rem; }
+        .social-content small { color: #8f9bb0; font-size: .78rem; }
+
+        .arrow {
+            color: #7f8ba1;
+            transition: transform .3s ease, color .3s ease;
+        }
+        .social-link:hover .arrow {
+            transform: translateX(5px);
+            color: #fff;
+        }
+
+        .whatsapp .social-icon { color: #4ade80; }
+        .facebook .social-icon { color: #60a5fa; }
+        .tiktok .social-icon { color: #f8fafc; }
+        .instagram .social-icon { color: #fb7185; }
+        .snapchat .social-icon { color: #fde047; }
+        .phone .social-icon { color: #93c5fd; }
+
+        .mini-note {
+            margin: 28px auto 0;
+            text-align: center;
+            color: #78849a;
+            font-size: .78rem;
+            animation: reveal .8s 1s both;
+        }
+
+        footer {
+            position: relative;
+            padding: 30px 16px 35px;
+            text-align: center;
+            color: #758197;
+            border-top: 1px solid rgba(255,255,255,.07);
+            background: rgba(2,6,23,.48);
+            backdrop-filter: blur(18px);
+        }
+        footer p { margin: 0 0 10px; }
+        footer a {
+            color: #9ca8bb;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color .2s ease;
+        }
+        footer a:hover { color: #fff; }
+
+        .toast-box {
+            position: fixed;
+            left: 50%;
+            bottom: 25px;
+            z-index: 5000;
+            transform: translate(-50%, 130px);
+            padding: 12px 18px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            color: #fff;
+            background: rgba(10,15,28,.82);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 15px 45px rgba(0,0,0,.35);
+            opacity: 0;
+            transition: .4s cubic-bezier(.2,.8,.2,1);
+        }
+        .toast-box.show { transform: translate(-50%, 0); opacity: 1; }
+
+        @keyframes revealDown {
+            from { opacity: 0; transform: translateY(-35px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(35px) scale(.96); filter: blur(7px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        @keyframes ring {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes pulse {
+            0%,100% { box-shadow: 0 0 0 4px rgba(34,197,94,.1), 0 0 18px rgba(34,197,94,.55); }
+            50% { box-shadow: 0 0 0 9px rgba(34,197,94,.03), 0 0 30px rgba(34,197,94,.9); }
+        }
+        @keyframes stars {
+            from { transform: translate3d(0,0,0); }
+            to { transform: translate3d(55px,55px,0); }
+        }
+        @keyframes floatOne {
+            50% { transform: translate(80px, 50px) scale(1.15); }
+        }
+        @keyframes floatTwo {
+            50% { transform: translate(-70px, 60px) scale(.9); }
+        }
+        @keyframes floatThree {
+            50% { transform: translate(80px, -45px) scale(1.12); }
+        }
+
+        @media (max-width: 680px) {
+            main {
+                width: min(100% - 22px, 520px);
+                padding-top: 30px;
+            }
+            .social-grid { grid-template-columns: 1fr; gap: 13px; }
+            .social-link { min-height: 76px; border-radius: 19px; }
+            .avatar-wrap { width: 138px; height: 138px; }
+            .avatar { width: 120px; height: 120px; }
+            .profile h1 { margin-top: 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-core"></div>
+    </div>
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+    <main>
+        <div class="topbar">
+            <button class="icon-btn" id="shareBtn" aria-label="Share profile" title="Share profile">
+                <i class="fas fa-share-nodes"></i>
+            </button>
+        </div>
+
+        <header class="profile">
+            <div class="avatar-wrap">
+                <img class="avatar"
+                     src="imges/e39147b7-9d30-430e-b05a-1962e1d8a745.jpeg"
+                     alt="Profile photo of Youssef Owais"
+                     loading="eager">
+                <span class="status" title="Online"></span>
+            </div>
+
+            <h1>Youssef Owais</h1>
+            <p>My Social Media Links</p>
+
+            <div class="badge">
+                <i class="fas fa-circle"></i>
+                Available online
+            </div>
+        </header>
+
+        <section class="social-grid" aria-label="Social media links">
+            <div class="social-card" style="--i:0">
+                <a class="social-link whatsapp"
+                   href="https://wa.me/201097325420"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Open WhatsApp">
+                    <span class="social-icon"><i class="fab fa-whatsapp"></i></span>
+                    <span class="social-content">
+                        <strong>WhatsApp</strong>
+                        <small>Message me directly</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i:1">
+                <a class="social-link facebook"
+                   href="https://www.facebook.com/share/1Vpk6YMYLz/?mibextid=wwXIfr"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Open Facebook">
+                    <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                    <span class="social-content">
+                        <strong>Facebook</strong>
+                        <small>Follow my updates</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i:2">
+                <a class="social-link tiktok"
+                   href="https://www.tiktok.com/@youssef.abdallah.01?_t=ZS-8ubF0zaUWgv&_r=1"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Open TikTok">
+                    <span class="social-icon"><i class="fab fa-tiktok"></i></span>
+                    <span class="social-content">
+                        <strong>TikTok</strong>
+                        <small>Watch my latest videos</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i:3">
+                <a class="social-link instagram"
+                   href="https://www.instagram.com/youssef_2wais/profilecard/?igsh=b3FncmZuOWxmeDll"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Open Instagram">
+                    <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                    <span class="social-content">
+                        <strong>Instagram</strong>
+                        <small>Photos &amp; stories</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i:4">
+                <a class="social-link snapchat"
+                   href="https://snapchat.com/t/aeTV3MpK"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Open Snapchat">
+                    <span class="social-icon"><i class="fab fa-snapchat"></i></span>
+                    <span class="social-content">
+                        <strong>Snapchat</strong>
+                        <small>Connect with me</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <div class="social-card" style="--i:5">
+                <a class="social-link phone"
+                   href="contact.html"
+                   aria-label="Open phone number">
+                    <span class="social-icon"><i class="fas fa-phone"></i></span>
+                    <span class="social-content">
+                        <strong>Phone Number</strong>
+                        <small>Contact me by phone</small>
+                    </span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+        </section>
+
+        <p class="mini-note">
+            <i class="fas fa-lock"></i> Official links • Safe &amp; direct
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 Youssef Owais. All Rights Reserved.</p>
+        <div>
+            <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#" aria-label="Terms of Service">Terms of Service</a>
+        </div>
+    </footer>
+
+    <div class="toast-box" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        const loader = document.getElementById("loader");
+        const toast = document.getElementById("toast");
+        const shareBtn = document.getElementById("shareBtn");
+
+        window.addEventListener("load", () => {
+            setTimeout(() => loader.classList.add("hide"), 500);
+        });
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add("show");
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+        }
+
+        shareBtn.addEventListener("click", async () => {
+            const data = {
+                title: "Youssef Owais",
+                text: "Check out Youssef Owais' social media links.",
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(data);
+                } else if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(window.location.href);
+                    showToast("Profile link copied ✓");
+                } else {
+                    showToast("Copy the page URL from your browser.");
+                }
+            } catch (error) {
+                if (error.name !== "AbortError") showToast("Share cancelled.");
+            }
+        });
+
+        // Premium mouse-follow glow + subtle 3D tilt.
+        document.querySelectorAll(".social-link").forEach(card => {
+            card.addEventListener("pointermove", e => {
+                if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const px = x / rect.width;
+                const py = y / rect.height;
+
+                card.style.setProperty("--mx", `${px * 100}%`);
+                card.style.setProperty("--my", `${py * 100}%`);
+
+                const rotateY = (px - .5) * 5;
+                const rotateX = (.5 - py) * 5;
+                card.style.transform =
+                    `translateY(-7px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener("pointerleave", () => {
+                card.style.transform = "";
+            });
+        });
+    </script>
+</body>
+</html>
