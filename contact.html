@@ -3,247 +3,1569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Youssef Owais contact phone number.">
-    <meta name="theme-color" content="#0f172a">
-    <title>Phone Number | Youssef Owais</title>
 
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/724/724664.png" type="image/png">
+    <meta name="description" content="Contact Youssef Owais by phone.">
+    <meta name="theme-color" content="#070b16">
+    <meta name="color-scheme" content="dark">
+
+    <title>Youssef Owais | Contact</title>
+
+    <link rel="icon"
+          href="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+          type="image/png">
+
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <style>
         :root {
-            --bg: #0f172a;
-            --bg-secondary: #1e293b;
-            --card: rgba(255, 255, 255, 0.94);
-            --text: #111827;
-            --muted: #64748b;
-            --accent: #2563eb;
+            --bg: #070b16;
+            --bg-2: #0d1324;
+
+            --text: #f8fafc;
+            --muted: #a7b1c5;
+
+            --card: rgba(255, 255, 255, 0.075);
+            --card-hover: rgba(255, 255, 255, 0.13);
+
+            --line: rgba(255, 255, 255, 0.12);
+
+            --blue: #60a5fa;
+            --purple: #a78bfa;
+            --green: #4ade80;
+
+            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             min-height: 100vh;
             margin: 0;
-            display: grid;
-            place-items: center;
-            padding: 24px;
-            font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+
             color: var(--text);
+
+            font-family:
+                "Segoe UI",
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                sans-serif;
+
             overflow-x: hidden;
+
             background:
-                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.28), transparent 28%),
-                radial-gradient(circle at 85% 25%, rgba(168, 85, 247, 0.25), transparent 30%),
-                linear-gradient(135deg, var(--bg), var(--bg-secondary));
+                radial-gradient(
+                    circle at 12% 12%,
+                    rgba(37, 99, 235, 0.28),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 88% 18%,
+                    rgba(168, 85, 247, 0.25),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(6, 182, 212, 0.14),
+                    transparent 32%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    var(--bg),
+                    var(--bg-2)
+                );
         }
+
+
+        /* =========================================
+           BACKGROUND GRID
+        ========================================= */
 
         body::before {
             content: "";
+
             position: fixed;
             inset: 0;
+
+            z-index: -2;
+
             pointer-events: none;
-            opacity: 0.20;
-            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
         }
 
-        .card {
-            position: relative;
-            z-index: 1;
-            width: min(100%, 430px);
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.30);
-            border-radius: 24px;
-            background: var(--card);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
-            backdrop-filter: blur(15px);
-            animation: fadeUp 0.7s ease both;
+
+        /* =========================================
+           PARTICLES
+        ========================================= */
+
+        body::after {
+            content: "";
+
+            position: fixed;
+            inset: -20%;
+
+            z-index: -3;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(59,130,246,.12) 0 2px,
+                    transparent 3px
+                );
+
+            background-size: 95px 95px;
+
+            animation: stars 30s linear infinite;
+
+            opacity: .55;
         }
 
-        .back {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 0;
-            border: 0;
-            background: transparent;
-            color: var(--text);
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-        }
 
-        .back-icon {
-            width: 34px;
-            height: 34px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1.5px solid currentColor;
+        /* =========================================
+           FLOATING ORBS
+        ========================================= */
+
+        .orb {
+            position: fixed;
+
+            width: 280px;
+            height: 280px;
+
             border-radius: 50%;
-            transition: transform 0.25s ease, background 0.25s ease;
+
+            filter: blur(70px);
+
+            opacity: .18;
+
+            pointer-events: none;
+
+            z-index: -1;
         }
 
-        .back:hover .back-icon {
-            transform: translateX(-3px);
-            background: rgba(37, 99, 235, 0.08);
+        .orb.one {
+            background: #2563eb;
+
+            top: 8%;
+            left: -90px;
+
+            animation:
+                floatOne 10s ease-in-out infinite;
         }
 
-        h1 {
-            margin: 28px 0 12px;
+        .orb.two {
+            background: #a855f7;
+
+            right: -90px;
+            top: 38%;
+
+            animation:
+                floatTwo 13s ease-in-out infinite;
+        }
+
+        .orb.three {
+            background: #06b6d4;
+
+            bottom: -100px;
+            left: 35%;
+
+            animation:
+                floatThree 11s ease-in-out infinite;
+        }
+
+
+        /* =========================================
+           LOADER
+        ========================================= */
+
+        .loader {
+            position: fixed;
+            inset: 0;
+
+            z-index: 9999;
+
+            display: grid;
+            place-items: center;
+
+            background: #050811;
+
+            transition:
+                opacity .7s ease,
+                visibility .7s ease;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-core {
+            width: 74px;
+            height: 74px;
+
+            border: 2px solid rgba(255,255,255,.12);
+
+            border-top-color: var(--blue);
+            border-right-color: var(--purple);
+
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+
+            box-shadow:
+                0 0 45px rgba(96,165,250,.35);
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        main {
+            position: relative;
+
+            z-index: 1;
+
+            width: min(100% - 32px, 760px);
+
+            margin: auto;
+
+            padding: 45px 0 50px;
+
+            flex: 1;
+        }
+
+
+        /* =========================================
+           TOP BAR
+        ========================================= */
+
+        .topbar {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+
+            animation:
+                reveal .8s .15s both;
+        }
+
+        .back-btn,
+        .share-btn {
+            width: 47px;
+            height: 47px;
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            backdrop-filter: blur(16px);
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .back-btn:hover,
+        .share-btn:hover {
+            transform:
+                translateY(-3px)
+                scale(1.04);
+
+            background:
+                rgba(255,255,255,.12);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,.25);
+        }
+
+
+        /* =========================================
+           PROFILE
+        ========================================= */
+
+        .profile {
             text-align: center;
-            font-size: 1.8rem;
-            font-weight: 800;
+
+            margin-bottom: 34px;
+
+            animation:
+                revealDown 1s .2s both;
         }
 
-        .subtitle {
-            margin: 0 0 22px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.95rem;
+        .avatar-wrap {
+            width: 145px;
+            height: 145px;
+
+            margin: auto;
+
+            position: relative;
+
+            display: grid;
+            place-items: center;
         }
+
+        .avatar-wrap::before,
+        .avatar-wrap::after {
+            content: "";
+
+            position: absolute;
+
+            inset: -7px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(96,165,250,.5);
+
+            animation:
+                ring 4s linear infinite;
+        }
+
+        .avatar-wrap::after {
+            inset: -15px;
+
+            border-color:
+                rgba(167,139,250,.18);
+
+            animation-duration: 6s;
+
+            animation-direction:
+                reverse;
+        }
+
+        .avatar {
+            width: 125px;
+            height: 125px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border:
+                4px solid
+                rgba(255,255,255,.92);
+
+            box-shadow:
+                0 0 0 8px
+                rgba(255,255,255,.035),
+
+                0 20px 55px
+                rgba(0,0,0,.4),
+
+                0 0 45px
+                rgba(59,130,246,.25);
+
+            transition:
+                transform .45s
+                cubic-bezier(.2,.8,.2,1),
+
+                box-shadow .45s ease;
+        }
+
+        .avatar:hover {
+            transform:
+                scale(1.055)
+                rotate(2deg);
+
+            box-shadow:
+                0 0 0 10px
+                rgba(255,255,255,.04),
+
+                0 25px 70px
+                rgba(0,0,0,.48),
+
+                0 0 65px
+                rgba(96,165,250,.42);
+        }
+
+        .status {
+            position: absolute;
+
+            right: 2px;
+            bottom: 10px;
+
+            width: 24px;
+            height: 24px;
+
+            border:
+                4px solid
+                #080d19;
+
+            border-radius: 50%;
+
+            background:
+                var(--green);
+
+            box-shadow:
+                0 0 0 5px
+                rgba(34,197,94,.12),
+
+                0 0 22px
+                rgba(34,197,94,.7);
+
+            animation:
+                pulse 2s infinite;
+        }
+
+        .profile h1 {
+            margin:
+                22px 0 7px;
+
+            font-size:
+                clamp(2rem, 6vw, 3rem);
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                -1.5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    #bfdbfe 45%,
+                    #ddd6fe
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+        }
+
+        .profile p {
+            margin: 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                1rem;
+        }
+
+
+        /* =========================================
+           CONTACT CARD
+        ========================================= */
+
+        .contact-card {
+            position: relative;
+
+            padding: 35px 30px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.10),
+                    rgba(255,255,255,.035)
+                );
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                var(--shadow);
+
+            overflow: hidden;
+
+            animation:
+                cardIn .85s
+                cubic-bezier(.2,.8,.2,1)
+                .35s both;
+        }
+
+        .contact-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            top: -130px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(59,130,246,.16);
+
+            filter: blur(35px);
+
+            pointer-events: none;
+        }
+
+        .contact-card::after {
+            content: "";
+
+            position: absolute;
+
+            top: -130%;
+            left: -30%;
+
+            width: 35%;
+            height: 360%;
+
+            transform:
+                rotate(28deg);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.13),
+                    transparent
+                );
+
+            animation:
+                shine 5s
+                ease-in-out
+                infinite;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================
+           CONTACT HEADER
+        ========================================= */
+
+        .contact-title {
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-icon {
+            width: 72px;
+            height: 72px;
+
+            margin:
+                0 auto 18px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 22px;
+
+            color: #93c5fd;
+
+            background:
+                rgba(59,130,246,.12);
+
+            border:
+                1px solid
+                rgba(96,165,250,.25);
+
+            box-shadow:
+                0 0 35px
+                rgba(59,130,246,.18);
+
+            font-size: 1.7rem;
+
+            animation:
+                iconFloat 3s
+                ease-in-out
+                infinite;
+        }
+
+        .contact-title h2 {
+            margin: 0 0 8px;
+
+            font-size:
+                clamp(1.4rem, 4vw, 1.9rem);
+
+            font-weight:
+                800;
+        }
+
+        .contact-title p {
+            margin: 0;
+
+            color:
+                #8f9bb0;
+
+            font-size:
+                .9rem;
+        }
+
+
+        /* =========================================
+           PHONE NUMBER
+        ========================================= */
 
         .phone-number {
-            margin: 0 0 18px;
-            padding: 15px 12px;
-            border-radius: 14px;
-            color: #fff;
-            background: #111827;
-            text-align: center;
-            font-size: clamp(1.35rem, 6vw, 1.75rem);
-            font-weight: 800;
-            letter-spacing: 1px;
-            user-select: all;
-        }
+            position: relative;
 
-        .btn-copy {
-            width: 100%;
-            min-height: 50px;
-            border: 0;
-            border-radius: 12px;
-            color: #fff;
-            background: var(--accent);
-            font-size: 1rem;
-            font-weight: 700;
+            z-index: 2;
+
+            margin:
+                28px 0 22px;
+
+            padding:
+                21px 20px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius: 19px;
+
+            background:
+                rgba(0,0,0,.18);
+
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-            transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                border-color .3s ease;
         }
 
-        .btn-copy:hover {
-            filter: brightness(1.07);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.32);
+        .phone-number:hover {
+            transform:
+                translateY(-4px);
+
+            background:
+                rgba(255,255,255,.06);
+
+            border-color:
+                rgba(96,165,250,.3);
         }
 
-        .btn-copy:active {
-            transform: translateY(0);
+        .phone-number strong {
+            display: block;
+
+            font-size:
+                clamp(1.35rem, 5vw, 1.8rem);
+
+            letter-spacing:
+                1px;
+
+            color:
+                #f8fafc;
         }
 
-        .btn-copy:focus-visible,
-        .back:focus-visible {
-            outline: 3px solid rgba(37, 99, 235, 0.35);
-            outline-offset: 4px;
+        .phone-number small {
+            display: block;
+
+            margin-top: 6px;
+
+            color:
+                #7f8ba1;
+
+            font-size:
+                .75rem;
         }
 
-        #copy-message {
-            min-height: 22px;
-            margin: 12px 0 0;
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .actions {
+            position: relative;
+
+            z-index: 3;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 13px;
+        }
+
+        .action-btn {
+            min-height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border-radius: 17px;
+
+            text-decoration: none;
+
+            font-weight:
+                750;
+
+            cursor: pointer;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.07);
+
+            transition:
+                transform .3s
+                cubic-bezier(.2,.8,.2,1),
+
+                box-shadow .3s ease,
+
+                background .3s ease;
+        }
+
+        .action-btn:hover {
+            transform:
+                translateY(-5px);
+
+            background:
+                rgba(255,255,255,.12);
+
+            box-shadow:
+                0 18px 35px
+                rgba(0,0,0,.28);
+        }
+
+        .call-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(34,197,94,.22),
+                    rgba(16,185,129,.10)
+                );
+
+            border-color:
+                rgba(74,222,128,.25);
+        }
+
+        .call-btn i {
+            color:
+                #4ade80;
+        }
+
+        .copy-btn i {
+            color:
+                #60a5fa;
+        }
+
+
+        /* =========================================
+           BACK HOME
+        ========================================= */
+
+        .home-link {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 22px;
+
+            color:
+                #8f9bb0;
+
+            text-decoration: none;
+
+            font-size: .88rem;
+
+            transition:
+                color .25s ease;
+        }
+
+        .home-link:hover {
+            color: white;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            position: relative;
+
+            z-index: 1;
+
+            padding:
+                28px 16px 35px;
+
             text-align: center;
-            color: #15803d;
-            font-size: 0.9rem;
-            font-weight: 700;
+
+            color:
+                #758197;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+
+            background:
+                rgba(2,6,23,.48);
+
+            backdrop-filter:
+                blur(18px);
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(28px); }
-            to { opacity: 1; transform: translateY(0); }
+        footer p {
+            margin:
+                0 0 10px;
         }
 
-        @media (max-width: 480px) {
-            body { padding: 16px; }
+        footer a {
+            color:
+                #9ca8bb;
 
-            .card {
-                padding: 24px 20px;
-                border-radius: 20px;
+            text-decoration:
+                none;
+
+            margin:
+                0 8px;
+
+            transition:
+                color .2s ease;
+        }
+
+        footer a:hover {
+            color:
+                #fff;
+
+            text-decoration:
+                underline;
+        }
+
+
+        /* =========================================
+           TOAST
+        ========================================= */
+
+        .toast-box {
+            position: fixed;
+
+            left: 50%;
+            bottom: 25px;
+
+            z-index: 5000;
+
+            transform:
+                translate(-50%, 130px);
+
+            padding:
+                12px 18px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius:
+                14px;
+
+            color: white;
+
+            background:
+                rgba(10,15,28,.86);
+
+            backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 15px 45px
+                rgba(0,0,0,.35);
+
+            opacity: 0;
+
+            transition:
+                .4s
+                cubic-bezier(.2,.8,.2,1);
+        }
+
+        .toast-box.show {
+            transform:
+                translate(-50%, 0);
+
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           ANIMATIONS
+        ========================================= */
+
+        @keyframes revealDown {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(-35px);
             }
 
-            h1 {
-                font-size: 1.55rem;
-                margin-top: 24px;
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
             }
         }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(40px)
+                    scale(.96);
+
+                filter:
+                    blur(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+
+                filter:
+                    blur(0);
+            }
+        }
+
+        @keyframes ring {
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%,100% {
+                box-shadow:
+                    0 0 0 4px
+                    rgba(34,197,94,.1),
+
+                    0 0 18px
+                    rgba(34,197,94,.55);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 0 9px
+                    rgba(34,197,94,.03),
+
+                    0 0 30px
+                    rgba(34,197,94,.9);
+            }
+        }
+
+        @keyframes stars {
+            from {
+                transform:
+                    translate3d(0,0,0);
+            }
+
+            to {
+                transform:
+                    translate3d(55px,55px,0);
+            }
+        }
+
+        @keyframes floatOne {
+            50% {
+                transform:
+                    translate(80px,50px)
+                    scale(1.15);
+            }
+        }
+
+        @keyframes floatTwo {
+            50% {
+                transform:
+                    translate(-70px,60px)
+                    scale(.9);
+            }
+        }
+
+        @keyframes floatThree {
+            50% {
+                transform:
+                    translate(80px,-45px)
+                    scale(1.12);
+            }
+        }
+
+        @keyframes iconFloat {
+            0%,100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-7px);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -50%;
+            }
+
+            35%,100% {
+                left: 130%;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            main {
+                width:
+                    min(100% - 22px, 520px);
+
+                padding-top:
+                    28px;
+            }
+
+            .contact-card {
+                padding:
+                    28px 17px;
+
+                border-radius:
+                    23px;
+            }
+
+            .actions {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .avatar-wrap {
+                width:
+                    132px;
+
+                height:
+                    132px;
+            }
+
+            .avatar {
+                width:
+                    115px;
+
+                height:
+                    115px;
+            }
+
+            .phone-number {
+                padding:
+                    19px 12px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================= */
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
+
+            *,
+            *::before,
+            *::after {
+
+                scroll-behavior:
+                    auto !important;
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
             }
         }
     </style>
 </head>
 
 <body>
-    <main class="card">
-        <a class="back" href="index.html" aria-label="Back to social media page">
-            <span class="back-icon" aria-hidden="true">
-                <i class="fa-solid fa-arrow-left"></i>
-            </span>
-            <span>Back</span>
-        </a>
 
-        <h1>My Number</h1>
-        <p class="subtitle">You can copy my phone number below.</p>
+    <!-- LOADER -->
+    <div
+        class="loader"
+        id="loader"
+        aria-hidden="true">
 
-        <p id="phone-number" class="phone-number" aria-label="Phone number">01097325420</p>
+        <div class="loader-core"></div>
+    </div>
 
-        <button id="copy-button" class="btn-copy" type="button">
-            <i class="fa-regular fa-copy me-2" aria-hidden="true"></i>
-            Copy My Number
-        </button>
 
-        <p id="copy-message" role="status" aria-live="polite"></p>
+    <!-- BACKGROUND -->
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+
+    <main>
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+
+            <a
+                href="index.html"
+                class="back-btn"
+                aria-label="Back to home"
+                title="Back to home">
+
+                <i class="fas fa-arrow-left"></i>
+
+            </a>
+
+
+            <button
+                class="share-btn"
+                id="shareBtn"
+                aria-label="Share contact page"
+                title="Share">
+
+                <i class="fas fa-share-nodes"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE -->
+        <header class="profile">
+
+            <div class="avatar-wrap">
+
+                <img
+                    class="avatar"
+                    src="imges/e39147b7-9d30-430e-b05a-1962e1d8a745.jpeg"
+                    alt="Profile photo of Youssef Owais"
+                    loading="eager">
+
+                <span
+                    class="status"
+                    title="Online">
+                </span>
+
+            </div>
+
+
+            <h1>
+                Youssef Owais
+            </h1>
+
+
+            <p>
+                Contact Me
+            </p>
+
+        </header>
+
+
+        <!-- CONTACT CARD -->
+        <section
+            class="contact-card"
+            aria-label="Contact information">
+
+
+            <div class="contact-title">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-phone"></i>
+
+                </div>
+
+
+                <h2>
+                    Let's Talk
+                </h2>
+
+
+                <p>
+                    You can contact me directly by phone.
+                </p>
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div
+                class="phone-number"
+                id="phoneNumber"
+                title="Click to copy">
+
+                <strong>
+                    +20 109 732 5420
+                </strong>
+
+                <small>
+                    Tap to copy phone number
+                </small>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+            <div class="actions">
+
+
+                <!-- CALL -->
+                <a
+                    class="action-btn call-btn"
+                    href="tel:+201097325420">
+
+                    <i class="fas fa-phone"></i>
+
+                    <span>
+                        Call Now
+                    </span>
+
+                </a>
+
+
+                <!-- COPY -->
+                <button
+                    class="action-btn copy-btn"
+                    id="copyBtn"
+                    type="button">
+
+                    <i class="fas fa-copy"></i>
+
+                    <span>
+                        Copy Number
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- HOME -->
+            <a
+                href="index.html"
+                class="home-link">
+
+                <i class="fas fa-house"></i>
+
+                Back to Social Media
+
+            </a>
+
+        </section>
+
     </main>
 
-    <script>
-        const copyButton = document.getElementById("copy-button");
-        const phoneNumber = document.getElementById("phone-number");
-        const copyMessage = document.getElementById("copy-message");
 
-        copyButton.addEventListener("click", async () => {
-            const number = phoneNumber.textContent.trim();
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Youssef Owais. All Rights Reserved.
+        </p>
+
+        <div>
+
+            <a
+                href="#"
+                aria-label="Privacy Policy">
+                Privacy Policy
+            </a>
+
+            <span aria-hidden="true">
+                |
+            </span>
+
+            <a
+                href="#"
+                aria-label="Terms of Service">
+                Terms of Service
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+    <div
+        class="toast-box"
+        id="toast"
+        role="status"
+        aria-live="polite">
+    </div>
+
+
+    <script>
+
+        /* =========================================
+           ELEMENTS
+        ========================================= */
+
+        const loader =
+            document.getElementById("loader");
+
+        const toast =
+            document.getElementById("toast");
+
+        const shareBtn =
+            document.getElementById("shareBtn");
+
+        const copyBtn =
+            document.getElementById("copyBtn");
+
+        const phoneNumber =
+            document.getElementById("phoneNumber");
+
+
+        /* =========================================
+           LOADER
+        ========================================= */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                loader.classList.add("hide");
+
+            }, 500);
+
+        });
+
+
+        /* =========================================
+           TOAST
+        ========================================= */
+
+        function showToast(message) {
+
+            toast.textContent =
+                message;
+
+            toast.classList.add("show");
+
+            clearTimeout(
+                window.toastTimer
+            );
+
+            window.toastTimer =
+                setTimeout(() => {
+
+                    toast.classList.remove("show");
+
+                }, 2400);
+        }
+
+
+        /* =========================================
+           COPY PHONE NUMBER
+        ========================================= */
+
+        async function copyPhone() {
+
+            const number =
+                "+201097325420";
 
             try {
-                if (navigator.clipboard && window.isSecureContext) {
-                    await navigator.clipboard.writeText(number);
-                } else {
-                    const textArea = document.createElement("textarea");
-                    textArea.value = number;
-                    textArea.style.position = "fixed";
-                    textArea.style.opacity = "0";
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    document.execCommand("copy");
-                    textArea.remove();
-                }
 
-                copyMessage.textContent = "The number has been copied!";
-                copyButton.innerHTML = '<i class="fa-solid fa-check me-2" aria-hidden="true"></i>Copied!';
+                await navigator.clipboard.writeText(
+                    number
+                );
 
-                setTimeout(() => {
-                    copyMessage.textContent = "";
-                    copyButton.innerHTML = '<i class="fa-regular fa-copy me-2" aria-hidden="true"></i>Copy My Number';
-                }, 1800);
+                showToast(
+                    "Phone number copied ✓"
+                );
+
             } catch (error) {
-                copyMessage.textContent = "Unable to copy. Please select the number manually.";
+
+                showToast(
+                    "Unable to copy automatically."
+                );
+
             }
-        });
+        }
+
+
+        copyBtn.addEventListener(
+            "click",
+            copyPhone
+        );
+
+
+        phoneNumber.addEventListener(
+            "click",
+            copyPhone
+        );
+
+
+        /* =========================================
+           SHARE
+        ========================================= */
+
+        shareBtn.addEventListener(
+            "click",
+            async () => {
+
+                const data = {
+
+                    title:
+                        "Youssef Owais | Contact",
+
+                    text:
+                        "Contact Youssef Owais.",
+
+                    url:
+                        window.location.href
+                };
+
+
+                try {
+
+                    if (
+                        navigator.share
+                    ) {
+
+                        await navigator.share(
+                            data
+                        );
+
+                    } else if (
+                        navigator.clipboard
+                    ) {
+
+                        await navigator.clipboard.writeText(
+                            window.location.href
+                        );
+
+                        showToast(
+                            "Page link copied ✓"
+                        );
+
+                    } else {
+
+                        showToast(
+                            "Copy the page URL from your browser."
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    if (
+                        error.name !==
+                        "AbortError"
+                    ) {
+
+                        showToast(
+                            "Share cancelled."
+                        );
+                    }
+                }
+            }
+        );
+
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
